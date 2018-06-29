@@ -1,0 +1,474 @@
+inherited SBCardFm: TSBLifeTimeTemplateForm
+  Left = 309
+  Top = 249
+  Caption = #1047#1072#1103#1074#1083#1077#1085#1080#1103
+  ClientHeight = 397
+  ClientWidth = 539
+  ParentFont = False
+  Font.Charset = RUSSIAN_CHARSET
+  Font.Name = 'MS Sans Serif'
+  Scaled = True
+  CaptionLocalizeID = 'EDM.EDOC_'#1044'000004'
+  IconIndex = 1
+  HelpContextCode = '1#'#1047#1042#1051'#'#1043#1083#1072#1074#1085#1086#1077'#Card'
+  NewDescriptionFormat = True
+  ExplicitLeft = 309
+  ExplicitTop = 244
+  ExplicitWidth = 555
+  ExplicitHeight = 435
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited IDStatusLabel: TSLDBStatusLabel
+    FormatStrLocalizeID = 'SYSRES_SBGUI.CARDTEMPLATEFORM_ID_STATUS_LABEL'
+  end
+  inherited StatusBar: TStatusBar
+    Top = 378
+    Width = 539
+    ExplicitTop = 368
+    ExplicitWidth = 529
+  end
+  inherited StdButtonsBox: TSLGroupBox
+    Enabled = False
+    TabOrder = 6
+    Visible = False
+  end
+  inherited SLDBNavigator: TSLDBNavigator
+    Left = 439
+    Top = 330
+    TabOrder = 4
+    ExplicitLeft = 439
+    ExplicitTop = 330
+  end
+  object Box01: TSLGroupBox [6]
+    Left = 0
+    Top = 0
+    Width = 423
+    Height = 379
+    TabOrder = 0
+    object TSLDBEllipsis
+      Left = 123
+      Top = 299
+      Width = 294
+      Height = 21
+      LookupAction = LookUpAction
+      ReadOnly = True
+      NumGlyphs = 1
+      TabOrder = 12
+      EditLabel.Width = 37
+      EditLabel.Height = 13
+      EditLabel.Caption = #1040#1074#1090#1086#1088
+      EditLabel.CaptionLocalizeID = 'EDM.REQ_'#1044'000007'
+      EditLabel.CaptionMode = cmRequired
+      LabelCaption = #1040#1074#1090#1086#1088
+      RequisiteCode = 'ISBEDocAuthor'
+      LabelSpacing = 114
+      DataSource = DetailDS0
+    end
+    object TSLDBEllipsis
+      Left = 122
+      Top = 349
+      Width = 130
+      Height = 21
+      LookupAction = LookUpAction
+      ReadOnly = True
+      NumGlyphs = 1
+      TabOrder = 14
+      EditLabel.Width = 85
+      EditLabel.Height = 13
+      EditLabel.Caption = #1044#1072#1090#1072' '#1087#1086#1089#1083'. '#1080#1079#1084'.'
+      EditLabel.CaptionLocalizeID = 'EDM.REQ_'#1044'000010'
+      EditLabel.CaptionMode = cmColonPostfix
+      LabelCaption = #1044#1072#1090#1072' '#1087#1086#1089#1083'. '#1080#1079#1084'.'
+      RequisiteCode = 'ISBEDocModifyDate'
+      LabelSpacing = 114
+      DataSource = DetailDS0
+    end
+    object TSLDBMemo
+      Left = 123
+      Top = 236
+      Width = 294
+      Height = 34
+      DataSource = DetailDS0
+      ReadOnly = True
+      ScrollBars = ssVertical
+      TabOrder = 10
+      EditLabel.Width = 83
+      EditLabel.Height = 13
+      EditLabel.Caption = #1053#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077
+      EditLabel.CaptionLocalizeID = 'EDM.REQ_'#1044'000008'
+      EditLabel.CaptionMode = cmRequired
+      LabelCaption = #1053#1072#1080#1084#1077#1085#1086#1074#1072#1085#1080#1077
+      RequisiteCode = 'ISBEDocName'
+      LabelSpacing = 114
+    end
+    object TSLDBEllipsis
+      Left = 123
+      Top = 11
+      Width = 294
+      Height = 21
+      LookupAction = LookUpAction
+      ReadOnly = True
+      NumGlyphs = 1
+      TabOrder = 0
+      EditLabel.Width = 101
+      EditLabel.Height = 13
+      EditLabel.Caption = #1042#1080#1076' '#1101#1083'. '#1076#1086#1082#1091#1084#1077#1085#1090#1072
+      EditLabel.CaptionLocalizeID = 'EDM.REQ_'#1044'000013'
+      EditLabel.CaptionMode = cmRequired
+      LabelCaption = #1042#1080#1076' '#1101#1083'. '#1076#1086#1082#1091#1084#1077#1085#1090#1072
+      RequisiteCode = 'ISBEDocKind'
+      LabelSpacing = 115
+      DataSource = DetailDS0
+    end
+    object TSLDBEllipsis
+      Left = 123
+      Top = 61
+      Width = 294
+      Height = 21
+      LookupAction = LookUpAction
+      NumGlyphs = 1
+      TabOrder = 3
+      EditLabel.Width = 62
+      EditLabel.Height = 13
+      EditLabel.Caption = #1048#1085#1080#1094#1080#1072#1090#1086#1088
+      EditLabel.CaptionLocalizeID = 'EDM.REQ_'#1044'000036'
+      EditLabel.CaptionMode = cmRequired
+      LabelCaption = #1048#1085#1080#1094#1080#1072#1090#1086#1088
+      RequisiteCode = #1056#1072#1073#1086#1090#1085#1080#1082
+      LabelSpacing = 115
+      DataSource = DetailDS0
+    end
+    object TSLDBEdit
+      Left = 123
+      Top = 135
+      Width = 294
+      Height = 21
+      DataSource = DetailDS0
+      TabOrder = 7
+      EditLabel.Width = 30
+      EditLabel.Height = 13
+      EditLabel.Caption = #1058#1077#1084#1072
+      EditLabel.CaptionLocalizeID = 'EDM.REQ_'#1044'000019'
+      EditLabel.CaptionMode = cmColonPostfix
+      LabelCaption = #1058#1077#1084#1072
+      RequisiteCode = #1044#1086#1087#1086#1083#1085#1077#1085#1080#1077'3'
+      LabelSpacing = 115
+    end
+    object TSLDBMemo
+      Left = 123
+      Top = 185
+      Width = 294
+      Height = 47
+      DataSource = DetailDS0
+      ScrollBars = ssVertical
+      TabOrder = 9
+      EditLabel.Width = 66
+      EditLabel.Height = 13
+      EditLabel.Caption = #1055#1088#1080#1084#1077#1095#1072#1085#1080#1077
+      EditLabel.CaptionLocalizeID = 'EDM.REQ_'#1044'000018'
+      EditLabel.CaptionMode = cmColonPostfix
+      LabelCaption = #1055#1088#1080#1084#1077#1095#1072#1085#1080#1077
+      RequisiteCode = 'ISBEDocNote'
+      LabelSpacing = 113
+    end
+    object TSLDBEllipsis
+      Left = 123
+      Top = 274
+      Width = 294
+      Height = 21
+      LookupAction = LookUpAction
+      ReadOnly = True
+      NumGlyphs = 1
+      TabOrder = 11
+      EditLabel.Width = 71
+      EditLabel.Height = 13
+      EditLabel.Caption = #1055#1088#1080#1083#1086#1078#1077#1085#1080#1077
+      EditLabel.CaptionLocalizeID = 'EDM.REQ_'#1044'000009'
+      EditLabel.CaptionMode = cmRequired
+      LabelCaption = #1055#1088#1080#1083#1086#1078#1077#1085#1080#1077
+      RequisiteCode = 'ISBEDocEditor'
+      LabelSpacing = 114
+      DataSource = DetailDS0
+    end
+    object TSLDBEllipsis
+      Left = 327
+      Top = 36
+      Width = 90
+      Height = 21
+      LookupAction = LookUpAction
+      NumGlyphs = 1
+      TabOrder = 2
+      EditLabel.Width = 90
+      EditLabel.Height = 13
+      EditLabel.Caption = #1044#1072#1090#1072' '#1076#1086#1082#1091#1084#1077#1085#1090#1072
+      EditLabel.CaptionLocalizeID = 'EDM.REQ_'#1044'000015'
+      EditLabel.CaptionMode = cmRequired
+      LabelCaption = #1044#1072#1090#1072' '#1076#1086#1082#1091#1084#1077#1085#1090#1072
+      RequisiteCode = #1044#1072#1090#1072'4'
+      LabelSpacing = 94
+      DataSource = DetailDS0
+    end
+    object TSLDBEllipsis
+      Left = 123
+      Top = 160
+      Width = 294
+      Height = 21
+      LookupAction = LookUpAction
+      NumGlyphs = 1
+      TabOrder = 8
+      EditLabel.Width = 83
+      EditLabel.Height = 13
+      EditLabel.Caption = #1055#1086#1076#1088#1072#1079#1076#1077#1083#1077#1085#1080#1077
+      EditLabel.CaptionLocalizeID = 'EDM.REQ_'#1044'000024'
+      EditLabel.CaptionMode = cmColonPostfix
+      LabelCaption = #1055#1086#1076#1088#1072#1079#1076#1077#1083#1077#1085#1080#1077
+      RequisiteCode = #1055#1086#1076#1088#1072#1079#1076#1077#1083#1077#1085#1080#1077
+      LabelSpacing = 113
+      DataSource = DetailDS0
+    end
+    object STDBEdit1: TSLDBEdit
+      Left = 123
+      Top = 36
+      Width = 88
+      Height = 21
+      TabOrder = 1
+      EditLabel.Width = 71
+      EditLabel.Height = 13
+      EditLabel.Caption = #8470' '#1076#1086#1082#1091#1084#1077#1085#1090#1072
+      EditLabel.CaptionLocalizeID = 'EDM.REQ_'#1044'000016'
+      EditLabel.CaptionMode = cmColonPostfix
+      EditLabel.FocusControl = STDBEdit1
+      LabelCaption = #8470' '#1076#1086#1082#1091#1084#1077#1085#1090#1072
+      RequisiteCode = #1044#1086#1087#1086#1083#1085#1077#1085#1080#1077
+      LabelSpacing = 113
+    end
+    object STDBEllipsis1: TSLDBEllipsis
+      Left = 123
+      Top = 110
+      Width = 90
+      Height = 21
+      LookupAction = LookUpAction
+      NumGlyphs = 1
+      TabOrder = 5
+      EditLabel.Width = 10
+      EditLabel.Height = 13
+      EditLabel.Caption = #1057
+      EditLabel.CaptionLocalizeID = 'EDM.DIRREQ_3913EF96_3A9A_4195_B21D_038026EF3FBA'
+      EditLabel.CaptionMode = cmColonPostfix
+      EditLabel.FocusControl = STDBEllipsis1
+      LabelCaption = #1057
+      RequisiteCode = 'Date'
+      LabelSpacing = 115
+    end
+    object STDBEllipsis2: TSLDBEllipsis
+      Left = 327
+      Top = 110
+      Width = 90
+      Height = 21
+      LookupAction = LookUpAction
+      NumGlyphs = 1
+      TabOrder = 6
+      EditLabel.Width = 17
+      EditLabel.Height = 13
+      EditLabel.Caption = #1055#1086
+      EditLabel.CaptionLocalizeID = 'EDM.DIRREQ_96BC46AB_B4A6_4400_BDDB_0E2FA31A5A83'
+      EditLabel.CaptionMode = cmColonPostfix
+      EditLabel.FocusControl = STDBEllipsis2
+      LabelCaption = #1055#1086
+      RequisiteCode = 'Date2'
+      LabelSpacing = 23
+    end
+    object STDBEllipsis3: TSLDBEllipsis
+      Left = 123
+      Top = 324
+      Width = 130
+      Height = 21
+      LookupAction = LookUpAction
+      NumGlyphs = 1
+      TabOrder = 13
+      EditLabel.Width = 84
+      EditLabel.Height = 13
+      EditLabel.Caption = #1044#1072#1090#1072' '#1089#1086#1079#1076#1072#1085#1080#1103
+      EditLabel.CaptionLocalizeID = 'EDM.REQ_'#1044'000014'
+      EditLabel.CaptionMode = cmRequired
+      EditLabel.FocusControl = STDBEllipsis3
+      LabelCaption = #1044#1072#1090#1072' '#1089#1086#1079#1076#1072#1085#1080#1103
+      RequisiteCode = 'ISBEDocCreateDate'
+      LabelSpacing = 114
+    end
+    object STDBComboBox1: TSLDBComboBox
+      Left = 123
+      Top = 85
+      Width = 90
+      Height = 21
+      ItemHeight = 13
+      ReadOnly = False
+      TabOrder = 4
+      EditLabel.Width = 83
+      EditLabel.Height = 13
+      EditLabel.Caption = #1058#1080#1087' '#1079#1072#1103#1074#1083#1077#1085#1080#1103
+      EditLabel.CaptionLocalizeID = 'HR.DIRREQ_6E308579_3CE3_4DAC_845E_2524367F46D4'
+      EditLabel.CaptionMode = cmRequired
+      EditLabel.FocusControl = STDBComboBox1
+      LabelCaption = #1058#1080#1087' '#1079#1072#1103#1074#1083#1077#1085#1080#1103
+      RequisiteCode = 'ISBEmployeeClaimType'
+      LabelSpacing = 115
+    end
+  end
+  object Box02: TSLGroupBox [7]
+    Left = 429
+    Top = 101
+    Width = 102
+    Height = 100
+    TabOrder = 2
+    object TSLButton
+      Left = 6
+      Top = 11
+      Width = 90
+      Height = 25
+      Action = Action0
+      TabOrder = 0
+      RequisiteCode = '&'#1055#1088#1072#1074#1072' '#1076#1086#1089#1090#1091#1087#1072
+    end
+    object TSLButton
+      Left = 6
+      Top = 40
+      Width = 90
+      Height = 25
+      Action = Action1
+      TabOrder = 1
+      RequisiteCode = '&'#1056#1050#1050
+    end
+    object TSLButton
+      Left = 6
+      Top = 69
+      Width = 90
+      Height = 25
+      Action = Action2
+      TabOrder = 2
+      RequisiteCode = #1055#1086'&'#1076#1087#1080#1089#1080
+    end
+  end
+  object Box01000: TSLGroupBox [8]
+    Left = 429
+    Top = 0
+    Width = 102
+    Height = 100
+    TabOrder = 5
+    object TSLButton
+      Left = 1
+      Top = 155
+      Width = 73
+      Height = 21
+      Action = AddAction
+      TabOrder = 3
+      RequisiteCode = 'AddBut'
+    end
+    object TSLButton
+      Left = 1
+      Top = 180
+      Width = 73
+      Height = 21
+      Action = DeleteAction
+      TabOrder = 4
+      RequisiteCode = 'DelBut'
+    end
+    object TSLButton
+      Left = 6
+      Top = 11
+      Width = 90
+      Height = 25
+      Action = SaveRecordAction
+      TabOrder = 0
+      RequisiteCode = 'SaveBut'
+    end
+    object TSLButton
+      Left = 6
+      Top = 40
+      Width = 90
+      Height = 25
+      Action = CancelAction
+      TabOrder = 1
+      RequisiteCode = 'RevBut'
+    end
+    object TSLButton
+      Left = 6
+      Top = 69
+      Width = 90
+      Height = 25
+      Action = ExitAction
+      TabOrder = 2
+      RequisiteCode = 'ExitBut'
+    end
+  end
+  object SLGroupBox1: TSLGroupBox [9]
+    Left = 429
+    Top = 202
+    Width = 102
+    Height = 44
+    TabOrder = 3
+    object STButton1: TSLButton
+      Left = 6
+      Top = 12
+      Width = 90
+      Height = 25
+      Action = Action3
+      TabOrder = 0
+      RequisiteCode = '&'#1064#1090#1088#1080#1093'-'#1082#1086#1076
+    end
+  end
+  inherited ActionList: TActionList
+    Left = 432
+    Top = 112
+    inherited ExitAction: TSLStandardAction
+      NoneLocalizedCaption = #1042'&'#1099#1093#1086#1076
+    end
+    inherited AddAction: TSLStandardAction
+      NoneLocalizedCaption = '&'#1044#1086#1073#1072#1074#1080#1090#1100
+      CaptionLocalizeID = 'SYSRES_SBGUI.CARDTEMPLATEFORM_ADD_ACTION_CAPTION'
+    end
+    inherited DeleteAction: TSLRecordAction
+      NoneLocalizedCaption = '&'#1059#1076#1072#1083#1080#1090#1100
+      CaptionLocalizeID = 'SYSRES_COMMON.DELETE_ACTION_CAPTION'
+    end
+    inherited SaveRecordAction: TSLRecordAction
+      NoneLocalizedCaption = '&'#1057#1086#1093#1088#1072#1085#1080#1090#1100
+      CaptionLocalizeID = 'SYSRES_COMMON.SAVE_ACTION_CAPTION'
+    end
+    inherited CancelAction: TSLRecordAction
+      Caption = #1054'&'#1090#1084#1077#1085#1080#1090#1100
+      NoneLocalizedCaption = #1054'&'#1090#1084#1077#1085#1080#1090#1100
+      CaptionLocalizeID = 'SYSRES_SBGUI.CARDTEMPLATEFORM_CANCEL_ACTION_CAPTION'
+    end
+    object Action0: TSLStandardAction
+      Category = 'BtnRequisites'
+      Caption = '&'#1055#1088#1072#1074#1072' '#1076#1086#1089#1090#1091#1087#1072
+      NoneLocalizedCaption = '&'#1055#1088#1072#1074#1072' '#1076#1086#1089#1090#1091#1087#1072
+      CaptionLocalizeID = 'EDM.ACT_'#1044'000001'
+      Code = '&'#1055#1088#1072#1074#1072' '#1076#1086#1089#1090#1091#1087#1072
+    end
+    object Action1: TSLStandardAction
+      Category = 'BtnRequisites'
+      Caption = '&'#1056#1050#1050
+      NoneLocalizedCaption = '&'#1056#1050#1050
+      CaptionLocalizeID = 'EDM.ACT_'#1044'000004'
+      Code = '&'#1056#1050#1050
+      InitialEnabledState = amEnabledOnBrowse
+    end
+    object Action2: TSLStandardAction
+      Category = 'BtnRequisites'
+      Caption = #1055#1086'&'#1076#1087#1080#1089#1080
+      NoneLocalizedCaption = #1055#1086'&'#1076#1087#1080#1089#1080
+      CaptionLocalizeID = 'EDM.ACT_'#1044'000003'
+      Code = #1055#1086'&'#1076#1087#1080#1089#1080
+      InitialEnabledState = amEnabledOnBrowse
+    end
+    object Action3: TSLStandardAction
+      Category = 'BtnRequisites'
+      Caption = '&'#1064#1090#1088#1080#1093'-'#1082#1086#1076
+      NoneLocalizedCaption = '&'#1064#1090#1088#1080#1093'-'#1082#1086#1076
+      CaptionLocalizeID = 'BPM.DIRACT_290874C6_C092_465D_A4AB_391BCC907F29'
+      Code = '&'#1064#1090#1088#1080#1093'-'#1082#1086#1076
+    end
+  end
+end

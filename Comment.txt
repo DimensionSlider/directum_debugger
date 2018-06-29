@@ -1,0 +1,150 @@
+На практике часто возникает потребность сохранять и обрабатывать данные 
+в массивах, осуществляя доступ к элементам не по индексу, а по ключу. Для 
+этого используются ассоциативные массивы, которые есть, например, во многих 
+скриптовых языках. В Delphi на уровне языка такая структура отсутствует.
+В качестве замены часто используются контейнерные классы TStringList, 
+TParams и т.п., но они весьма неудобны в использовании и недостаточно 
+функциональны. К тому же появляется необходимость заботиться об уничтожении 
+экземпляра класса, что зачастую порождает лишние try..finally..end.
+
+Предлагаю вашему вниманию реализацию ассоциативных массивов, построенную на 
+использовании интерфейсов, которая избавлена от недостатков стандартных 
+контейнеров. Из её преимуществ можно отметить: удобное использование, неплохую 
+производительность, отсутствие небходимости принудительного уничтожения, 
+нескольно представлений одного массива, использование ключей разных типов, 
+наличие функций итератора, удобное использование многомерных массивов.
+
+Далее привожу пример использования массивов:
+
+program Example;
+{$APPTYPE CONSOLE}
+uses
+  Arrays;
+
+procedure Main;
+var
+  I: IIntArray;
+  S: IStrArray;
+  V: IVarArray;
+  M: IMltArray;
+
+begin
+  // создаём массив и получаем представление в целых числах
+  I := CreateArray;
+
+  // заполняем
+  I['a'] := 5;
+  I['b'] := 1;
+  I['c'] := 4;
+  I['d'] := 2;
+  I['e'] := 3;
+
+  // выводим
+  WriteLn('Original array');
+  I.First;
+  while not I.Eof do
+  begin
+    WriteLn('[', I.CurrentKey, '] = ', I.CurrentValue);
+    I.Next;
+  end;
+
+  // сортируем
+  I.Sort;
+
+  // наблюдаем результат
+  WriteLn('Sorted array');
+  I.First;
+  while not I.Eof do
+  begin
+    WriteLn('[', I.CurrentKey, '] = ', I.CurrentValue);
+    I.Next;
+  end;
+
+  // создаём строковое представление
+  S := I.Instance;
+
+  // наблюдаем результат
+  WriteLn('Two views of one array');
+  S.First;
+  while not S.Eof do
+  begin
+    WriteLn('[', S.CurrentKey, '] + ''10'' = ', S.CurrentValue + '10');
+    WriteLn('[', I.CurrentKey, '] + 10 = ', I.CurrentValue + 10);
+    S.Next;
+  end;
+
+  // создаём вариантное представление
+  V := S.Instance;
+  V.Clear;
+  V['integer'] := 10;
+  V['string'] := '10';
+
+  // наблюдаем результат
+  WriteLn('Variant type conversion');
+  V.First;
+  while not V.Eof do
+  begin
+    WriteLn('[', V.CurrentKey, '] + 10 = ', V.CurrentValue + 10);
+    WriteLn('[', V.CurrentKey, '] + ''10'' = ', V.CurrentValue + '10');
+    V.Next;
+  end;
+
+  // используем ключи разных типов, но одного значения
+  S.Clear;
+  S[False] := 'boolean';
+  S[0] := 'integer';
+  S[0.0] := 'float';
+  S['0'] := 'string';
+
+  // наблюдаем результат
+  WriteLn('Variant type keys ;)');
+  S.First;
+  while not S.Eof do
+  begin
+    WriteLn('[', S.CurrentKey, '] = ', S.CurrentValue);
+    S.Next;
+  end;
+
+  // создаём ещё одно представление, на этот раз - многомерное
+  M := V.Instance;
+  M.Clear;
+
+  // заполняем матрицу
+  M['A']['a'].AsInteger := 1;
+  M['A']['b'].AsInteger := 2;
+  M['A']['c'].AsInteger := 3;
+  M['B']['a'].AsInteger := 4;
+  M['B']['b'].AsInteger := 5;
+  M['B']['c'].AsInteger := 6;
+  M['C']['a'].AsInteger := 7;
+  M['C']['b'].AsInteger := 8;
+  M['C']['c'].AsInteger := 9;
+
+  // выводим матрицу
+  WriteLn('Multidimensional array');
+  M.First;
+  while not M.Eof do
+  begin
+    M.CurrentValue.First;
+    while not M.CurrentValue.Eof do
+    begin
+      WriteLn('[', M.CurrentKey, ',', M.CurrentValue.CurrentKey, '] = ',
+        M.CurrentValue.CurrentValue.AsInteger);
+      M.CurrentValue.Next;
+    end;
+    M.Next;
+  end;
+
+  // перед возвратом все созданные массивы автоматически удаляются
+  WriteLn('Arrays is free');
+end;
+
+var
+  L: Integer;
+begin
+  L := AllocMemSize;
+  Main;
+  // проверка утечки памяти
+  WriteLn('Memory leak: ', AllocMemSize - L, ' bytes');
+  ReadLn;
+end.

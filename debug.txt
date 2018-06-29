@@ -1,0 +1,3 @@
+Tdock_isbl_tree.treeFreeNode: ошибка при попытке очистить дерево обработок. Access violation at address 0040612E in module 'directum_debugger.exe'. Read of address 80808080
+Tdock_isbl_tree.treeFreeNode: ошибка при попытке очистить дерево обработок. Access violation at address 0040612E in module 'directum_debugger.exe'. Read of address 80808080
+Tdock_isbl_tree.treeFreeNode: ошибка при попытке очистить дерево обработок. Access violation at address 0040612E in module 'directum_debugger.exe'. Read of address 80808080
